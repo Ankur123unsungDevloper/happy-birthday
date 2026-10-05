@@ -16,6 +16,10 @@
 
 <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
 
+<button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Pause music" hidden>
+  <span class="music-toggle-icon" aria-hidden="true">&#127925;</span>
+</button>
+
 <!-- ========================================= -->
 <!-- HERO                                       -->
 <!-- ========================================= -->
@@ -33,6 +37,12 @@
     <button id="open-surprise" class="btn btn--primary" type="button">
       <span>Open Your Surprise</span> <span aria-hidden="true">&#127873;</span>
     </button>
+
+    <!-- The audio element itself is never visible — it just needs to exist
+         in the page. Keep it as a sibling of the button, not nested inside
+         it (an <audio> inside a <button> is invalid HTML and can swallow
+         clicks meant for the button). -->
+    <audio id="bg-music" src="assets/birthday-music.mp3" loop preload="none"></audio>
   </div>
 
   <a href="#message" class="scroll-cue" id="scroll-cue" aria-label="Scroll down">
@@ -77,25 +87,25 @@
       <div class="memory-grid">
         <figure class="memory-card" data-anim="fade-up">
           <div class="memory-img-wrap">
-            <img src="assets/mom1.jpeg" alt="A memory with Mom" loading="lazy">
+            <img src="images/mom1.jpg" alt="A memory with Mom" loading="lazy">
           </div>
           <figcaption>Beautiful Memories</figcaption>
         </figure>
         <figure class="memory-card" data-anim="fade-up">
           <div class="memory-img-wrap">
-            <img src="assets/mom2.jpeg" alt="A memory with Mom" loading="lazy">
+            <img src="images/mom2.jpg" alt="A memory with Mom" loading="lazy">
           </div>
           <figcaption>Always Together</figcaption>
         </figure>
         <figure class="memory-card" data-anim="fade-up">
           <div class="memory-img-wrap">
-            <img src="assets/mom3.jpeg" alt="A memory with Mom" loading="lazy">
+            <img src="images/mom3.jpg" alt="A memory with Mom" loading="lazy">
           </div>
           <figcaption>My Favorite Person</figcaption>
         </figure>
         <figure class="memory-card" data-anim="fade-up">
           <div class="memory-img-wrap">
-            <img src="assets/mom4.jpeg" alt="A memory with Mom" loading="lazy">
+            <img src="images/mom4.jpg" alt="A memory with Mom" loading="lazy">
           </div>
           <figcaption>Moments I&rsquo;ll Always Treasure</figcaption>
         </figure>

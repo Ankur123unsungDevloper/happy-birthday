@@ -13,6 +13,7 @@ const typewriterText = "Dear Mom, there aren't enough words for everything you'v
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientParticles();
   initHeroOpen();
+  initMusicToggle();
   initScrollReveal();
   initGallery();
   initGiftBox();
@@ -103,6 +104,25 @@ function initHeroOpen(){
     main.hidden = false;
     burst($('#celebration-canvas'), window.innerWidth / 2, window.innerHeight, 30);
 
+    // Browsers block audio that starts without a user gesture, but a click
+    // handler counts as one, so this is the right place to start it.
+    const music = $('#bg-music');
+    const toggle = $('#music-toggle');
+    if (music){
+      music.volume = 0.6;
+      music.play().then(() => {
+        if (toggle){
+          toggle.hidden = false;
+          toggle.setAttribute('aria-pressed', 'true');
+          toggle.setAttribute('aria-label', 'Pause music');
+        }
+      }).catch(() => {
+        // If it's still blocked for some reason, fail silently rather
+        // than breaking the rest of the reveal — the toggle just stays
+        // hidden since there's nothing playing to control.
+      });
+    }
+
     requestAnimationFrame(() => {
       $('#message').scrollIntoView({ behavior: 'smooth' });
     });
@@ -140,6 +160,27 @@ function startTypewriter(){
   }
   // Give the scroll a moment to settle before typing starts.
   setTimeout(type, 700);
+}
+
+/* =========================================================
+   MUSIC TOGGLE (play/pause the background music)
+   ========================================================= */
+function initMusicToggle(){
+  const toggle = $('#music-toggle');
+  const music = $('#bg-music');
+  if (!toggle || !music) return;
+
+  toggle.addEventListener('click', () => {
+    if (music.paused){
+      music.play().catch(() => {});
+      toggle.setAttribute('aria-pressed', 'true');
+      toggle.setAttribute('aria-label', 'Pause music');
+    } else {
+      music.pause();
+      toggle.setAttribute('aria-pressed', 'false');
+      toggle.setAttribute('aria-label', 'Play music');
+    }
+  });
 }
 
 /* =========================================================
