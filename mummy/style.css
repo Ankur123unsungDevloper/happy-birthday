@@ -518,33 +518,6 @@ h1, h2, p{ margin: 0; }
 .footer p{ margin-bottom: 0.4rem; }
 .footer-year{ color: var(--gold); font-size: 0.78rem; }
 
-.music-toggle{
-  position: fixed;
-  bottom: var(--space-md);
-  right: var(--space-md);
-  z-index: 60;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--white);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  transition: transform 0.3s var(--ease);
-}
-.music-toggle:hover{ transform: scale(1.06); }
-.music-toggle[aria-pressed="false"] .music-toggle-icon{ opacity: 0.45; }
-
-@media (max-width: 480px){
-  .music-toggle{
-    width: 46px; height: 46px;
-    bottom: max(var(--space-sm), env(safe-area-inset-bottom));
-    right: max(var(--space-sm), env(safe-area-inset-right));
-  }
-}
-
 .celebration-canvas{
   position: fixed;
   inset: 0;
