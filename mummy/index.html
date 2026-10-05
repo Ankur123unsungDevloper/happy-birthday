@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday, Mom</title>
+<meta name="description" content="A birthday surprise for Mom.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+<!-- ========================================= -->
+<!-- HERO                                       -->
+<!-- ========================================= -->
+<header class="hero" id="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">A little something for you</p>
+    <h1 class="hero-title">
+      Happy Birthday,<br>
+      <span class="script">Mom</span> <span aria-hidden="true">&#10084;</span>
+    </h1>
+    <p class="hero-sub">To the most beautiful soul in my life&hellip;</p>
+
+    <button id="open-surprise" class="btn btn--primary" type="button">
+      <span>Open Your Surprise</span> <span aria-hidden="true">&#127873;</span>
+    </button>
+  </div>
+
+  <a href="#message" class="scroll-cue" id="scroll-cue" aria-label="Scroll down">
+    <span class="scroll-cue-dot"></span>
+  </a>
+</header>
+
+<!-- ========================================= -->
+<!-- MAIN CONTENT (revealed after the surprise) -->
+<!-- ========================================= -->
+<main id="main-content" class="main-content" hidden>
+
+  <!-- ===================================== -->
+  <!-- BIRTHDAY MESSAGE                       -->
+  <!-- ===================================== -->
+  <section class="section message-section" id="message">
+    <div class="container container--narrow">
+      <h2 class="section-title">For My Wonderful Mom <span aria-hidden="true">&#10084;</span></h2>
+
+      <div class="message-card" data-anim="fade-up">
+        <!-- Edit this letter freely — it's the heart of the page. -->
+        <p id="typewriter-line" class="message-lead"></p>
+
+        <div id="message-rest" class="message-rest">
+          <p>I don't say this nearly as often as I should, but you are the reason so much good in my life exists at all.</p>
+          <p>Every sacrifice you made so quietly, every late night, every worry you carried so I wouldn't have to &mdash; I see it now, even the parts you never mentioned.</p>
+          <p>Your love has shaped who I am more than anything else ever could. You taught me kindness by simply living it, and strength by never making it look hard, even when it was.</p>
+          <p>Today isn't nearly enough to thank you for a lifetime of love, but I hope it reminds you how deeply you're loved in return.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================== -->
+  <!-- MEMORIES                               -->
+  <!-- ===================================== -->
+  <section class="section memories-section" id="memories">
+    <div class="container">
+      <h2 class="section-title" data-anim="fade-up">Beautiful Memories Together</h2>
+
+      <!-- Replace the src paths below with your own photos in images/ -->
+      <div class="memory-grid">
+        <figure class="memory-card" data-anim="fade-up">
+          <div class="memory-img-wrap">
+            <img src="assets/mom1.jpeg" alt="A memory with Mom" loading="lazy">
+          </div>
+          <figcaption>Beautiful Memories</figcaption>
+        </figure>
+        <figure class="memory-card" data-anim="fade-up">
+          <div class="memory-img-wrap">
+            <img src="assets/mom2.jpeg" alt="A memory with Mom" loading="lazy">
+          </div>
+          <figcaption>Always Together</figcaption>
+        </figure>
+        <figure class="memory-card" data-anim="fade-up">
+          <div class="memory-img-wrap">
+            <img src="assets/mom3.jpeg" alt="A memory with Mom" loading="lazy">
+          </div>
+          <figcaption>My Favorite Person</figcaption>
+        </figure>
+        <figure class="memory-card" data-anim="fade-up">
+          <div class="memory-img-wrap">
+            <img src="assets/mom4.jpeg" alt="A memory with Mom" loading="lazy">
+          </div>
+          <figcaption>Moments I&rsquo;ll Always Treasure</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- ===================================== -->
+  <!-- WHY YOU'RE SPECIAL                     -->
+  <!-- ===================================== -->
+  <section class="section special-section" id="special">
+    <div class="container">
+      <h2 class="section-title" data-anim="fade-up">Why You&rsquo;re Special</h2>
+
+      <div class="special-grid">
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#10084;&#65039;</span>
+          <p>Your unconditional love</p>
+        </div>
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#127803;</span>
+          <p>Your kindness</p>
+        </div>
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#10024;</span>
+          <p>Your strength</p>
+        </div>
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#127968;</span>
+          <p>You make every place feel like home</p>
+        </div>
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#129303;</span>
+          <p>Your endless support</p>
+        </div>
+        <div class="special-card" data-anim="fade-up">
+          <span class="special-emoji" aria-hidden="true">&#128150;</span>
+          <p>You always believe in me</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================== -->
+  <!-- SPECIAL SURPRISE / GIFT BOX            -->
+  <!-- ===================================== -->
+  <section class="section surprise-section" id="surprise">
+    <div class="container container--narrow">
+      <h2 class="section-title" data-anim="fade-up">One Last Surprise</h2>
+      <p class="surprise-hint" data-anim="fade-up">Go on, tap it.</p>
+
+      <button id="gift-box" class="gift-box" type="button" aria-label="Open your gift">
+        <span class="gift-lid" aria-hidden="true">&#127873;</span>
+        <span class="gift-glow" aria-hidden="true"></span>
+      </button>
+
+      <div id="surprise-message" class="surprise-message">
+        <p class="script surprise-text">You deserve all the happiness in the world, Mom. <span aria-hidden="true">&#10084;</span></p>
+
+        <button id="more-surprise-btn" class="btn btn--ghost more-surprise-btn" type="button">
+          <span>One More Surprise</span> <span aria-hidden="true">&#10024;</span>
+        </button>
+
+        <p id="second-message" class="second-message">
+          Every single day with you feels like a gift I didn&rsquo;t know I needed &mdash; thank you for being endlessly, wonderfully you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================== -->
+  <!-- FINAL MESSAGE                          -->
+  <!-- ===================================== -->
+  <section class="section final-section" id="final">
+    <div class="container container--narrow final-lines">
+      <p class="final-line script final-line--title" data-anim="fade-up">Happy Birthday, Mom <span aria-hidden="true">&#10084;</span></p>
+      <p class="final-line" data-anim="fade-up">Thank you for being my home, my strength, my guide, and my biggest supporter.</p>
+      <p class="final-line final-line--signoff script" data-anim="fade-up">I love you, Mom. Always and forever. <span aria-hidden="true">&#10084;</span></p>
+
+      <span class="final-heart" aria-hidden="true">&#10084;</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made with <span aria-hidden="true">&#10084;</span> for Mom</p>
+    <p class="footer-year">&copy; <span id="footer-year"></span></p>
+  </footer>
+
+</main>
+
+<canvas id="celebration-canvas" class="celebration-canvas" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
